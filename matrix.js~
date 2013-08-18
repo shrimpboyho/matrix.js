@@ -50,6 +50,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		this.mat[i][k] = val;
 	};
 
+	/* PRIVATE: MAT GENERATOR */
+
+	matrix.prototype.genMat = function(rows, columns){
+		    this.rows = rows;
+		    this.columns = columns;
+		    this.myarray = new Array(this.rows);
+		    for (var i=0; i < this.columns; i +=1) {
+			this.myarray[i]=new Array(this.rows)
+		    }
+		    return this.myarray;
+	};
+
 	/* Inverse operation */
 
 	matrix.prototype.inverse = function(){

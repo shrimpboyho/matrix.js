@@ -8,3 +8,4 @@ console.log(thing.getMat());
 thing.setElement(0,1,999);
 console.log(thing.getElement(0,1));
 console.log(thing.multiplyByScalar(2));
+console.log(thing.genMat(10,11));
