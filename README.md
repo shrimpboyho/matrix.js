@@ -11,7 +11,6 @@ Include the library in your HTML as follows:
 
 <script src="matrix.js"></script>
 <script src="your_code.js"></script>
-
 ```
 
 ##How to Use
@@ -71,9 +70,7 @@ var indie = thing.getElement(0, 1);
 console.log(indie);
 
 /*  OUTPUT:
- *	
  *	2
- *
  */
 
 ```
