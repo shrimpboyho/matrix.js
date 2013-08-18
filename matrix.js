@@ -25,12 +25,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (function(){
 
+	"use strict";
+	
 	/* Contructor */
 
 	window.matrix = function matrix(rows, columns){
 		this.rows = rows; // height
 		this.columns = columns; //width
-	}
+	};
 
 	/* Getters and setters */
 
@@ -38,7 +40,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		this.mat = mat;
 	};
 
-	matrix.prototype.getMat = function(mat){
+	matrix.prototype.getMat = function(){
 		return this.mat;
 	};
 
@@ -57,7 +59,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		    this.columns = columns;
 		    this.myarray = new Array(this.rows);
 		    for (var i=0; i < this.columns; i +=1) {
-			this.myarray[i]=new Array(this.rows)
+			this.myarray[i]=new Array(this.rows);
 		    }
 		    return this.myarray;
 	};
@@ -72,7 +74,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 	matrix.prototype.multiplyByScalar = function(k){
 		var newone = new matrix(this.rows, this.columns);		
-		var mat = this.getMat();		
+		var mat = this.getMat();
 		newone.setMat(mat);
 		var i,j;		
 		for(i = 0; i < this.rows; i++){
