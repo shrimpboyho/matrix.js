@@ -22,68 +22,67 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
+(function () {
 
-(function(){
+  "use strict";
 
-	"use strict";
-	
-	/* Contructor */
+  /* Contructor */
 
-	window.matrix = function matrix(rows, columns){
-		this.rows = rows; // height
-		this.columns = columns; //width
-	};
+  window.matrix = function matrix(rows, columns) {
+    this.rows = rows; // height
+    this.columns = columns; //width
+  };
 
-	/* Getters and setters */
+  /* Getters and setters */
 
-	matrix.prototype.setMat = function(mat){
-		this.mat = mat;
-	};
+  matrix.prototype.setMat = function (mat) {
+    this.mat = mat;
+  };
 
-	matrix.prototype.getMat = function(){
-		return this.mat;
-	};
+  matrix.prototype.getMat = function () {
+    return this.mat;
+  };
 
-	matrix.prototype.getElement = function(i, k){
-		return this.mat[i][k];
-	};
+  matrix.prototype.getElement = function (i, k) {
+    return this.mat[i][k];
+  };
 
-	matrix.prototype.setElement = function(i, k, val){
-		this.mat[i][k] = val;
-	};
+  matrix.prototype.setElement = function (i, k, val) {
+    this.mat[i][k] = val;
+  };
 
-	/* PRIVATE: MAT GENERATOR */
+  /* PRIVATE: MAT GENERATOR */
 
-	matrix.prototype.genMat = function(rows, columns){
-		    this.rows = rows;
-		    this.columns = columns;
-		    this.myarray = new Array(this.rows);
-		    for (var i=0; i < this.columns; i +=1) {
-			this.myarray[i]=new Array(this.rows);
-		    }
-		    return this.myarray;
-	};
+  matrix.prototype.genMat = function (rows, columns) {
+    this.rows = rows;
+    this.columns = columns;
+    this.myarray = new Array(this.rows);
+    for (var i = 0; i < this.columns; i += 1) {
+      this.myarray[i] = new Array(this.rows);
+    }
+    return this.myarray;
+  };
 
-	/* Inverse operation */
+  /* Inverse operation */
 
-	matrix.prototype.inverse = function(){
+  matrix.prototype.inverse = function () {
 
-	};
+  };
 
-	/* Scalar multiplication operation */
+  /* Scalar multiplication operation */
 
-	matrix.prototype.multiplyByScalar = function(k){
-		var newone = new matrix(this.rows, this.columns);		
-		var mat = this.getMat();
-		newone.setMat(mat);
-		var i,j;		
-		for(i = 0; i < this.rows; i++){
-			for(j = 0; j < this.columns; j++){				
-				var num = this.getElement(i,j);
-				newone.setElement(i,j,num*k);			
-			}
-		}
-		return newone;
-	};
+  matrix.prototype.multiplyByScalar = function (k) {
+    var newone = new matrix(this.rows, this.columns);
+    var mat = this.getMat();
+    newone.setMat(mat);
+    var i, j;
+    for (i = 0; i < this.rows; i++) {
+      for (j = 0; j < this.columns; j++) {
+        var num = this.getElement(i, j);
+        newone.setElement(i, j, num * k);
+      }
+    }
+    return newone;
+  };
 
 })();
