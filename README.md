@@ -20,7 +20,6 @@ Creating a matrix is as simple as creating a matrix obejct and specifying the nu
 ```js
 
 var thing = new matrix(3, 3); // matrix(amountOfRows, amountOfColumns)
-
 ```
 
 ###Getters and Setters
@@ -32,7 +31,6 @@ You can set an entire matrix mat like this:
 thing.setMat([[1,2,3],
 			  [4,5,6],
 			  [7,8,9]]);
-
 ```
 
 You can also set individual elements like this:
@@ -40,13 +38,11 @@ You can also set individual elements like this:
 ```js
 
 thing.setElement(0,1,999); // .setElement(rowIndex, columnIndex, value)
-
 ```
 
 You can get an entire matrix mat like this:
 
 ```js
-
 var mat = thing.getMat();
 console.log(mat);
 
@@ -72,7 +68,6 @@ console.log(indie);
 /*  OUTPUT:
  *	2
  */
-
 ```
 
 ###Operations
