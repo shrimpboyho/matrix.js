@@ -31,6 +31,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   window.matrix = function matrix(rows, columns) {
     this.rows = rows; // height
     this.columns = columns; //width
+    this.mat = this.genMat(this.rows, this.columns); //default mat
   };
 
   /* Getters and setters */
@@ -123,9 +124,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   /* MATH OPERATION FUNCTIONS THAT REQUIRE MORE THAN ONE MATRIX */
 
-  window.addMatrices = function(a , b){
-    if(a.rows === b.rows && a.columns === b.columns){
-      
+  window.addMatrices = function(a, b) {
+    if (a.rows === b.rows && a.columns === b.columns) {
+      var answer = new matrix(a.rows,a.columns);
+      var i, j;
+      for (i = 0; i < a.rows; i++) {
+        for (j = 0; j < a.columns; j++) {
+          answer.setElement(i, j, a.getElement(i, j) + b.getElement(i, j));
+        }
+      }
+      return answer;
     }
   };
 
