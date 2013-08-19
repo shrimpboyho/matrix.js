@@ -1,7 +1,8 @@
 matrix.js
 =========
 
-A Simple JavaScript Matrix Library. At it's core ```matrix.js``` provides a ```matrix()``` object that is a wrapper around a multidimensional array.
+#A Simple JavaScript Matrix Library. 
+At it's core ```matrix.js``` provides a ```matrix()``` object that is a wrapper around a multidimensional array.
 
 ##How to Install
 
