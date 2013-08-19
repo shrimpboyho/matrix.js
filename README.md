@@ -1,6 +1,5 @@
 [matrix.js](https://github.com/shrimpboyho/matrix.js/) - A Simple JavaScript Matrix Library. 
 ===============================================
-
 ##What is it?
 
 At it's core ```matrix.js``` provides a ```matrix()``` javascript object that is a wrapper around a multidimensional array.
