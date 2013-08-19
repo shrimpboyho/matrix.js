@@ -9,6 +9,8 @@ thing.setMat([[1,2,3],
 console.log(thing.getMat());
 thing.setElement(0,1,999);
 console.log(thing.getElement(0,1));
+console.log(thing.getRow(2));
+console.log(thing.getColumn(2));
 
 /* SCALAR MULTIPLICATION */
 
@@ -33,7 +35,7 @@ a.setMat([[23,12],
 var b = new matrix(2,2);
 
 b.setMat([[1,1],
-		  [1,1]]);
+		  [1,99]]);
 
 var c = addMatrices(a,b);
 

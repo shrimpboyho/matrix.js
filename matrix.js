@@ -52,6 +52,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     this.mat[i][k] = val;
   };
 
+  matrix.prototype.getRow = function(index) {
+    return this.getMat()[index];
+  };
+
+  matrix.prototype.getColumn = function(index) {
+    var i;
+    var thing = [];
+    for(i = 0; i < this.rows; i++){
+      thing.push(this.getMat()[i][index]);
+    }
+    return thing;
+  };
+
   /* PRIVATE: MAT GENERATOR */
 
   matrix.prototype.genMat = function(rows, columns) {
@@ -137,21 +150,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     }
   };
 
-  // TODO: FIX
+  // TODO: IMPLEMENT
   window.multiplyMatrices = function(a, b) {
     if (a.columns === b.rows) {
-      var answer = new matrix(a.rows,b.columns);
-      var i, j;
-      var sum = 0;
-      for (i = 0; i < a.rows; i++) {
-        for (j = 0; j < b.columns; j++) {
-          var elem1 = a.getElement(i, j);
-          var elem2 = a.getElement(j, i);
-          sum += (elem1 * elem2);
-        }
-        answer.setElement(i,i,sum);
-      }
-      return answer;
     }
   };
 
