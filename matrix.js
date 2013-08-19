@@ -121,4 +121,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     return newone;
   };
 
+  /* MATH OPERATION FUNCTIONS THAT REQUIRE MORE THAN ONE MATRIX */
+
+  window.addMatrices = function(a , b){
+    if(a.rows === b.rows && a.columns === b.columns){
+      
+    }
+  };
+
 })();
