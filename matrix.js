@@ -22,7 +22,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
-(function () {
+(function() {
 
   "use strict";
 
@@ -35,25 +35,25 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   /* Getters and setters */
 
-  matrix.prototype.setMat = function (mat) {
+  matrix.prototype.setMat = function(mat) {
     this.mat = mat;
   };
 
-  matrix.prototype.getMat = function () {
+  matrix.prototype.getMat = function() {
     return this.mat;
   };
 
-  matrix.prototype.getElement = function (i, k) {
+  matrix.prototype.getElement = function(i, k) {
     return this.mat[i][k];
   };
 
-  matrix.prototype.setElement = function (i, k, val) {
+  matrix.prototype.setElement = function(i, k, val) {
     this.mat[i][k] = val;
   };
 
   /* PRIVATE: MAT GENERATOR */
 
-  matrix.prototype.genMat = function (rows, columns) {
+  matrix.prototype.genMat = function(rows, columns) {
     this.rows = rows;
     this.columns = columns;
     this.myarray = new Array(this.rows);
@@ -65,13 +65,49 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   /* Inverse operation */
 
-  matrix.prototype.inverse = function () {
+  matrix.prototype.inverse = function() {
 
+  };
+
+  /* Determinant operation */
+
+  matrix.prototype.determinant = function(n, mat) {
+    if (this.rows === this.columns) {
+      if (!mat) {
+        mat = this.getMat();
+      }
+      if (!n) {
+        n = this.rows;
+      }
+      var i, c, j, subi, subj;
+      var d = 0;
+      var n = this.rows;
+      var submat = this.genMat(this.rows, this.columns);
+      if (n == 2) return ((mat[0][0] * mat[1][1]) - (mat[1][0] * mat[0][1]));
+      else {
+        for (c = 0; c < n; c++) {
+          subi = 0; //submatrix's i value
+          for (i = 1; i < n; i++) {
+            subj = 0;
+            for (j = 0; j < n; j++) {
+              if (j == c)
+                continue;
+              submat[subi][subj] = mat[i][j];
+              subj++;
+            }
+            subi++;
+
+          }
+          d = d + (Math.pow(-1, c) * mat[0][c] * this.determinant(n - 1, submat));
+        }
+      }
+      return d;
+    }
   };
 
   /* Scalar multiplication operation */
 
-  matrix.prototype.multiplyByScalar = function (k) {
+  matrix.prototype.multiplyByScalar = function(k) {
     var newone = new matrix(this.rows, this.columns);
     var mat = this.getMat();
     newone.setMat(mat);
