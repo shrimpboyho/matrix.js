@@ -1,7 +1,11 @@
 [matrix.js](https://github.com/shrimpboyho/matrix.js/) - A Simple JavaScript Matrix Library. 
 ===============================================
 
-At it's core ```matrix.js``` provides a ```matrix()``` object that is a wrapper around a multidimensional array.
+##What is it?
+
+At it's core ```matrix.js``` provides a ```matrix()``` javascript object that is a wrapper around a multidimensional array.
+
+This library includes several functions for operations regarding matrices, including finding determinants, inverses, adding, and multiplying matrices.
 
 ##How to Install
 
