@@ -2,7 +2,7 @@
 ===============================================
 ##What is it?
 
-At it's core ```matrix.js``` provides a ```matrix()``` javascript object that is a wrapper around a multidimensional array.
+At it's core ```matrix.js``` provides a ```matrix()``` JavaScript object that is a wrapper around a multidimensional array.
 
 This library includes several functions for operations regarding matrices, including finding determinants, inverses, adding, and multiplying matrices.
 
