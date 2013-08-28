@@ -50,15 +50,12 @@ var mat = thing.getMat();
 console.log(mat);
 
 /*  OUTPUT:
- * 
  *	[Array[3], Array[3], Array[3]]
  *	0: Array[3]
  *	1: Array[3]
  *	2: Array[3]
  *	length: 3
- *
  */
-
 ```
 
 You can get individual elements from the matrix like this:
@@ -75,4 +72,53 @@ console.log(indie);
 
 ###Operations
 
-TODO
+You can add two matrices by calling the ```addMatrices()```  function. It returns a new matrix with the result of the operation.:
+
+```js
+
+var a = new matrix(2,2);
+a.setMat([[23,12],
+		  [32,32]]);
+
+var b = new matrix(2,2);
+
+b.setMat([[1,1],
+		  [1,99]]);
+
+var c = addMatrices(a,b);
+
+console.log(c.getMat());
+
+/*  OUTPUT:
+ *	Array[2]
+ *		0: Array[2]
+ *			0: 24
+ *			1: 13
+ *			length: 2
+ *			__proto__: Array[0]
+ *		1: Array[2]
+ *			0: 33
+ *			1: 131
+ *		length: 2
+ *		__proto__: Array[0]
+ *		length: 2
+ *	__proto__: Array[0]
+ */
+```
+
+You can multiply by a scalar by calling the```.multiplyByScalar()```  method. It returns a new matrix with the result of the operation.:
+
+```js
+
+var thing = new matrix(3,3);
+
+thing.setMat([[1,2,3],
+			  [4,5,6],
+			  [7,8,9]]);
+var answerMatrix = thing.multiplyByScalar(2);
+console.log(answerMatrix.getMat());
+
+/*  OUTPUT:
+ *	
+ */
+```
