@@ -153,6 +153,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   // TODO: IMPLEMENT
   window.multiplyMatrices = function(a, b) {
     if (a.columns === b.rows) {
+      var answer = new matrix(a.rows,b.columns);
+      var i, j, k, rowC = -1, colC = -1;
+      for(i = 0; i < a.rows; i++){
+        rowC++;
+        var currentRow = a.getRow(i);
+        console.log("Current row: " + currentRow);
+        for(j = 0; j < b.columns; j++){
+          colC++;
+          var currentColumn = b.getColumn(j);
+          console.log("Current column: " + currentColumn);
+          // Multiply the currentRow by the currentColumn
+          var sum = 0;
+          for(k = 0; k < currentColumn.length; k++){
+            sum += (currentRow[k] * currentColumn[k]);
+          }
+          console.log("Sum: " + sum);
+          answer.setElement(rowC, colC, sum);
+        }
+      }
+      return answer;
     }
   };
 

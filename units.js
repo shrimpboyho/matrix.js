@@ -40,3 +40,18 @@ b.setMat([[1,1],
 var c = addMatrices(a,b);
 
 console.log(c.getMat());
+
+var acid = new matrix(2,3);
+
+acid.setMat([[1,2,3],
+		     [4,5,6]]);
+
+var base = new matrix(3,2);
+
+base.setMat([[7 ,8 ],
+		     [9 ,10],
+		     [11,12]]);
+
+var reaction = multiplyMatrices(acid,base);
+
+console.log(reaction.getMat());
