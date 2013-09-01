@@ -99,14 +99,14 @@ console.log(c.getMat());
  *		1: Array[2]
  *			0: 33
  *			1: 131
- *		length: 2
- *		__proto__: Array[0]
+ *			length: 2
+ *			__proto__: Array[0]
  *		length: 2
  *	__proto__: Array[0]
  */
 ```
 
-You can multiply by a scalar by calling the```.multiplyByScalar()```  method. It returns a new matrix with the result of the operation.:
+You can multiply by a scalar by calling the```.multiplyByScalar()```  method. It returns a new matrix with the result of the operation:
 
 ```js
 
@@ -119,6 +119,61 @@ var answerMatrix = thing.multiplyByScalar(2);
 console.log(answerMatrix.getMat());
 
 /*  OUTPUT:
- *	
+ *	Array[3]
+ *		0: Array[3]
+ *			0: 2
+ *			1: 4
+ *			2: 6
+ *			length: 3
+ *			__proto__: Array[0]
+ *		1: Array[2]
+ *			0: 8
+ *			1: 10
+ *			2: 12
+ *			length: 3
+ *			__proto__: Array[0]
+ *		2: Array[2]
+ *			0: 14
+ *			1: 16
+ *			2: 18
+ *			length: 3
+ *			__proto__: Array[0]
+ *		length: 3
+ *	__proto__: Array[0]	
  */
 ```
+
+You can multiply by two matrices by calling the ```multiplyMatrices()```  function. It requires two matrices as the arguments. It returns a new matrix with the result of the operation:
+
+```js
+
+var acid = new matrix(2,3);
+acid.setMat([[1,2,3],
+		     [4,5,6]]);
+
+var base = new matrix(3,2);
+base.setMat([[7 ,8 ],
+		     [9 ,10],
+		     [11,12]]);
+
+var reaction = multiplyMatrices(acid,base);
+console.log(reaction.getMat());
+
+
+/*  OUTPUT:
+ *	Array[2]
+ *		0: Array[2]
+ *			0: 58
+ *			1: 64
+ *			length: 2
+ *			__proto__: Array[0]
+ *		1: Array[4]
+ *			0: 139
+ *			1: 154
+ *			length: 4
+ *			__proto__: Array[0]
+ *	length: 2
+ *	__proto__: Array[0]
+ */
+```
+
