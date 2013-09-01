@@ -169,8 +169,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             sum += (currentRow[k] * currentColumn[k]);
           }
           console.log("Sum: " + sum);
+          console.log("Writing to index " + rowC + ',' + colC);
           answer.setElement(rowC, colC, sum);
         }
+        colC = -1;
       }
       return answer;
     }
